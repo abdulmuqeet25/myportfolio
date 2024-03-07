@@ -1,8 +1,12 @@
-function downloadCV() {
+function downloadCV(fileName) {
     event.preventDefault();
-    
-    // alert("dsdas")
-
+    var fileUrl = fileName;
+    var link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 //gallery item filter
@@ -11,7 +15,6 @@ const items = document.querySelector(".portfolio-gallery").children;
 for (let i = 0; i < filterButtons.length; i++) {
     filterButtons[i].addEventListener("click", function () {
         for (let j = 0; j < filterButtons.length; j++) {
-            console.log("hhhd")
             filterButtons[j].classList.remove("active")
         }
         this.classList.add("active");
@@ -66,17 +69,17 @@ const margin = 30;
 let slideDot;
 
 const responsive = [{
-        breakPoint: {
-            width: 0,
-            item: 1
-        }
-    },
-    {
-        breakPoint: {
-            width: 991,
-            item: 2
-        }
+    breakPoint: {
+        width: 0,
+        item: 1
     }
+},
+{
+    breakPoint: {
+        width: 991,
+        item: 2
+    }
+}
 ]
 
 function load() {
@@ -144,7 +147,6 @@ window.onload = load();
 //header when scroll
 window.onscroll = function () {
     const docScroll = document.documentElement.scrollTop;
-    console.log(docScroll);
     if (window.innerWidth > 991) {
         if (docScroll > 100) {
             document.querySelector("header").classList.add("fixed");
