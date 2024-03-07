@@ -26,6 +26,10 @@ html {
 	flex-wrap: wrap;
 }
 
+ol {
+    list-style-type: '- ';
+}
+
 .section-title {
 	flex: 0 0 100%;
 	max-width: 100%;
@@ -465,9 +469,12 @@ header .navbar-social ul li a.active::before {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+.icon-career{
+	width: 60px;
+}
 
 .services .service-content .box {
-	flex: 0 0 calc(33.33% - 20px);
+	flex: 0 0 calc(100% - 20px);
 	max-width: 0 0 calc(33.33% - 20px);
 	margin-bottom: 30px;
 	background-color: #ffffff;
